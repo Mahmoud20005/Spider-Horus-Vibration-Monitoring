@@ -1,60 +1,56 @@
 # 🕷️ Spider Horus – Real-Time Industrial Vibration Monitoring System
 
-A real-time industrial vibration monitoring system designed to detect abnormal machine vibrations using an **ESP32** and **MPU6050** accelerometer. The system streams vibration data wirelessly to a Python desktop application through **UDP over Wi-Fi**, where the data is visualized in real time and abnormal vibration events trigger visual and audible alarms.
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![ESP32](https://img.shields.io/badge/ESP32-IoT-red)
+![MPU6050](https://img.shields.io/badge/MPU6050-Sensor-green)
+![Arduino](https://img.shields.io/badge/Arduino-IDE-00979D?logo=arduino)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+A real-time industrial vibration monitoring system designed to detect abnormal machine vibrations using an **ESP32** and **MPU6050** accelerometer. The system wirelessly transmits vibration data to a Python desktop application using **UDP over Wi-Fi**, providing live visualization, automatic anomaly detection, and instant alarm notifications.
 
 ---
 
-## 📌 Overview
+# 📸 Project Preview
 
-Industrial machines often suffer from excessive vibration before mechanical failures occur. Early vibration detection helps reduce maintenance costs and prevents unexpected downtime.
-
-Spider Horus continuously measures vibration intensity, filters sensor noise, visualizes live data, and alerts the operator whenever the vibration exceeds a predefined safety threshold.
+<p align="center">
+<img src="images/setup.jpeg" width="750">
+</p>
 
 ---
 
-## ✨ Features
+# 📌 Overview
 
-- 📡 Real-time vibration monitoring
-- 📶 Wi-Fi communication using ESP32
+Unexpected machine failures are often preceded by abnormal vibration patterns. **Spider Horus** continuously monitors vibration intensity, filters sensor noise, visualizes measurements in real time, and alerts the operator whenever dangerous vibration levels are detected.
+
+The project demonstrates how embedded systems and Python-based visualization can be combined to create a low-cost predictive maintenance solution suitable for industrial environments.
+
+---
+
+# ✨ Features
+
+- 📈 Real-time vibration monitoring
+- 📡 Wireless communication via Wi-Fi
 - 📤 UDP data transmission
-- 📈 Live Python visualization using Matplotlib
-- 🚨 Automatic alarm using LED and buzzer
-- ⚙️ Auto-calibration at startup
+- ⚙️ Automatic sensor calibration
 - 🔍 Noise filtering for stable readings
-- 📊 Real-time vibration graph
-- 🏭 Designed for industrial predictive maintenance applications
+- 🚨 LED & Buzzer alarm system
+- 📊 Live vibration graph
+- 🖥 Python desktop monitoring application
+- 🏭 Suitable for predictive maintenance applications
 
 ---
 
-# 📷 Project Gallery
+# 📷 Hardware Gallery
 
-## Hardware Prototype
+<p align="center">
+<img src="images/prototype.jpeg" width="45%">
+<img src="images/prototype1.jpeg" width="45%">
+</p>
 
-![Prototype](images/prototype.jpeg)
-
----
-
-## Complete Setup
-
-![Setup](images/setup.jpeg)
-
----
-
-## Circuit Wiring
-
-![Circuit](images/circuit_wiring.png)
-
----
-
-## Live Vibration Graph
-
-![Graph](images/graph.png)
-
----
-
-## Second Prototype Version
-
-![Prototype 2](images/prototype1.jpeg)
+<p align="center">
+<img src="images/circuit_wiring.png" width="45%">
+<img src="images/graph.png" width="45%">
+</p>
 
 ---
 
@@ -70,21 +66,21 @@ Spider Horus continuously measures vibration intensity, filters sensor noise, vi
 
 ---
 
-# 💻 Software Stack
+# 💻 Software & Technologies
 
 - Arduino IDE
 - Python 3
 - ESP32 Arduino Framework
 - Matplotlib
 - Socket Programming
-- UDP Communication
-- Wi-Fi Networking
+- UDP Networking
+- Wi-Fi Communication
 
 ---
 
-# 📂 Project Structure
+# 📂 Repository Structure
 
-```
+```text
 Spider-Horus-Vibration-Monitoring
 │
 ├── firmware/
@@ -94,9 +90,9 @@ Spider-Horus-Vibration-Monitoring
 │   └── monitor.py
 │
 ├── images/
+│   ├── setup.jpeg
 │   ├── prototype.jpeg
 │   ├── prototype1.jpeg
-│   ├── setup.jpeg
 │   ├── circuit_wiring.png
 │   └── graph.png
 │
@@ -104,18 +100,19 @@ Spider-Horus-Vibration-Monitoring
 │
 ├── requirements.txt
 ├── README.md
-└── LICENSE
+├── LICENSE
+└── .gitignore
 ```
 
 ---
 
-# ⚙️ System Workflow
+# ⚙️ System Architecture
 
-```
+```text
 MPU6050 Sensor
         │
         ▼
-ESP32 reads acceleration
+ESP32 Firmware
         │
         ▼
 Auto Calibration
@@ -124,20 +121,23 @@ Auto Calibration
 Noise Filtering
         │
         ▼
-Wi-Fi UDP Transmission
+UDP over Wi-Fi
         │
         ▼
-Python Desktop Application
+Python Desktop Monitor
         │
         ▼
-Live Graph + Alarm Detection
+Live Graph Visualization
+        │
+        ▼
+LED & Buzzer Alarm
 ```
 
 ---
 
 # 🚀 Getting Started
 
-## Clone Repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/Mahmoud20005/Spider-Horus-Vibration-Monitoring.git
@@ -145,7 +145,7 @@ git clone https://github.com/Mahmoud20005/Spider-Horus-Vibration-Monitoring.git
 
 ---
 
-## Install Python Requirements
+## Install Python Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -155,15 +155,15 @@ pip install -r requirements.txt
 
 ## Upload ESP32 Firmware
 
-1. Open Arduino IDE
-2. Install ESP32 Board Package
-3. Open `firmware/spider_horus.ino`
-4. Configure your Wi-Fi credentials
-5. Upload the firmware
+1. Open Arduino IDE.
+2. Install the ESP32 board package.
+3. Open `firmware/spider_horus.ino`.
+4. Configure your Wi-Fi credentials.
+5. Upload the firmware to the ESP32.
 
 ---
 
-## Run Desktop Monitor
+## Run the Python Monitor
 
 ```bash
 python python/monitor.py
@@ -171,15 +171,28 @@ python python/monitor.py
 
 ---
 
-# 📊 Results
+# 📊 Experimental Results
 
-The system successfully:
+The developed system successfully achieved:
 
-- Streams vibration data over Wi-Fi
-- Detects abnormal vibration events
-- Displays live vibration intensity
-- Generates real-time graphical analysis
-- Activates LED and buzzer alarms when the threshold is exceeded
+- Approximately **100 Hz** sampling rate
+- Stable real-time Wi-Fi communication
+- Low-latency UDP data transmission
+- Live vibration visualization
+- Automatic abnormal vibration detection
+- Reliable LED and buzzer alarm activation
+- Continuous monitoring with low computational overhead
+
+---
+
+# 🎯 Applications
+
+- Industrial Machine Monitoring
+- Predictive Maintenance
+- Motor Health Monitoring
+- Mechanical Equipment Diagnostics
+- Smart Factory Systems
+- Industrial IoT
 
 ---
 
@@ -187,11 +200,11 @@ The system successfully:
 
 - MQTT Cloud Integration
 - Node-RED Dashboard
-- Predictive Maintenance using Machine Learning
-- Data Logging to Database
-- Mobile Application
+- Raspberry Pi Edge Gateway
+- Machine Learning Fault Prediction
 - FFT Frequency Analysis
-- Edge AI Anomaly Detection
+- Database Logging
+- Mobile Monitoring Application
 
 ---
 
@@ -199,15 +212,32 @@ The system successfully:
 
 ## Mahmoud Ibrahim
 
-Mechatronics Engineering Student passionate about **Embedded Systems, Industrial IoT, Robotics, and AI-driven Smart Systems**. This project demonstrates real-time industrial vibration monitoring using ESP32, MPU6050, Python, and wireless communication.
+**Mechatronics Engineering Student**
 
-### Connect with Me
+Interested in:
 
-- 💼 LinkedIn: https://www.linkedin.com/in/mahmoud-ibrahim-755ab4315
-- 💻 GitHub: https://github.com/Mahmoud20005
+- Embedded Systems
+- Industrial IoT
+- Robotics
+- Industrial Automation
+- Edge AI
+
+💼 LinkedIn
+
+https://www.linkedin.com/in/mahmoud-ibrahim-755ab4315
+
+💻 GitHub
+
+https://github.com/Mahmoud20005
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
 
 ---
 
 ## ⭐ Support
 
-If you found this project useful, consider giving it a ⭐ on GitHub.## ⭐ If you like this project, don't forget to leave a Star!
+If you found this project useful, please consider giving it a ⭐ on GitHub.

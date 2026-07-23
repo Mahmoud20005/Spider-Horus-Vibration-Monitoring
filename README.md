@@ -197,18 +197,17 @@ The system successfully:
 
 # 👨‍💻 Author
 
-**Mahmoud Ibrahim**
+## Mahmoud Ibrahim
 
-Mechatronics Engineering Student
+Mechatronics Engineering Student passionate about **Embedded Systems, Industrial IoT, Robotics, and AI-driven Smart Systems**. This project demonstrates real-time industrial vibration monitoring using ESP32, MPU6050, Python, and wireless communication.
 
-Embedded Systems • Industrial IoT • Robotics • Python • ESP32
+### Connect with Me
 
-LinkedIn:
-https://www.linkedin.com/in/mahmoud20005
-
-GitHub:
-https://github.com/Mahmoud20005
+- 💼 LinkedIn: https://www.linkedin.com/in/mahmoud-ibrahim-755ab4315
+- 💻 GitHub: https://github.com/Mahmoud20005
 
 ---
 
-## ⭐ If you like this project, don't forget to leave a Star!
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.## ⭐ If you like this project, don't forget to leave a Star!
